@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:wechat_demo/root_page.dart';
+import 'package:wechat_demo/utils.dart';
 
 void main() {
   runApp(const MyApp());

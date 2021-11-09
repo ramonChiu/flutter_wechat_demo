@@ -1,27 +1,34 @@
 import 'package:flutter/material.dart';
-import 'package:wechat_demo/mine/mine_header.dart';
 import 'package:wechat_demo/sperate_line.dart';
+import 'package:wechat_demo/utils.dart';
 
-import 'dicover/discover_cell.dart';
-
-class MinePage extends StatefulWidget {
-  const MinePage({Key? key}) : super(key: key);
+import 'discover_cell.dart';
+class DiscoverPage extends StatefulWidget {
+  const DiscoverPage({Key? key}) : super(key: key);
 
   @override
-  _MinePageState createState() => _MinePageState();
+  _DiscoverPageState createState() => _DiscoverPageState();
 }
 
-class _MinePageState extends State<MinePage> {
+class _DiscoverPageState extends State<DiscoverPage> {
+  Color _themColor = Colors.grey;
   @override
   Widget build(BuildContext context) {
+    final w = Utils.screen_w;
+    final h = Utils.screen_h;
+    final _th = 0.7;
+    print('$w --- $h');
     return Scaffold(
-      body: Stack(
-        children: [
-          MediaQuery.removePadding(
-            context: context,
-            child:ListView(
+      appBar: AppBar(
+        centerTitle: true,//这是为了安卓设置
+        title: Text('发现'),
+        backgroundColor: _themColor,
+        elevation: 0.0,//隐藏阴影效果
+      ),
+      body: Center(
+        child: Container(
+          child: ListView(
             children: [
-              MineHeader(),
               DiscoverCell(
                 imageName: 'images/朋友圈.png',
                 title: '朋友圈',
@@ -82,19 +89,9 @@ class _MinePageState extends State<MinePage> {
 
             ],
           ),
-            removeTop: true,
-          ),
-
-
-          Positioned(
-            child: Image(image: AssetImage('images/相机.png'),width: 30,),
-            right: 30,
-            top: 40,
-          ),
-
-        ],
+          color: _themColor,
+        )
       ),
     );
   }
 }
-

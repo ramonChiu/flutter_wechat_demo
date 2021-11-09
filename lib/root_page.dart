@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'chat_page.dart';
-import 'discover_page.dart';
+import 'dicover/discover_page.dart';
 import 'friends_page.dart';
 import 'mine_page.dart';
 class RootPage extends StatefulWidget {
@@ -28,8 +28,8 @@ class _RootPageState extends State<RootPage> {
             });
           },
           items: [
-            BottomNavigationBarItem(icon: Image(image: AssetImage('images/tabbar_chat.png'),height: 5,width: 5,),
-                activeIcon: Image(image: AssetImage('images/tabbar_chat_hl.png'),),
+            BottomNavigationBarItem(icon: Image(image: AssetImage('images/tabbar_chat.png'),width: 20,),
+                activeIcon: Image(image: AssetImage('images/tabbar_chat_hl.png'),width: 20,),
                 label: '微信',
             ),
             BottomNavigationBarItem(icon: Icon(Icons.bookmark),label: '通讯录'),
